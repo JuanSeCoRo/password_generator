@@ -1,12 +1,10 @@
 import random
 
-elemento = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+def gen_pass(pass_length):
+    elements = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-/*!&$#?=@<>"
+    password = ""
 
-size = int( input("De cuantos caracteres quieres tu contraseña?") )
+    for i in range(pass_length):
+        password += random.choice(elements)
 
-password = ""
-
-for i in range(size):
-    password += random.choice(elemento)
-
-print(password)
+    return password
